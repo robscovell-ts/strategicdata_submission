@@ -1,10 +1,8 @@
 use Dancer2;
 use WordFinder;
 
-set serializer => 'JSON';
-
 get '/ping' => sub {
-  "OK"
+  return 'OK';
 };
 
 get '/wordfinder/:input' => sub {
@@ -12,9 +10,9 @@ get '/wordfinder/:input' => sub {
   my ($error, $result) = WordFinder::find_words($input);
   if ($error) {
     status 400;
-    return { 'error' => $error };
+    send_as JSON => { 'error' => $error, 'status' => 400 };
   }
-  return $result;
+  send_as JSON => $result;
 };
 
 start;
