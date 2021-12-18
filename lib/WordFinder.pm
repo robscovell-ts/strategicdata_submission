@@ -3,6 +3,7 @@ package WordFinder;
 sub find_words {
   my $input = shift;
   return ('Invalid Input', undef) if $input =~ /[\W\s]/;
+  return ('Input String Too Long', undef) if length($input) > 32;
 
   my @dictionary;
   open my $fh, '<', $ENV{'DICTIONARY_FILE'};

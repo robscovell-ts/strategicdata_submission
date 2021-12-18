@@ -1,5 +1,5 @@
 use WordFinder;
-use Test::More tests => 7;
+use Test::More tests => 8;
 
 my ($error, $result);
 
@@ -17,3 +17,6 @@ ok ($result->[2] eq 'go', 'Third word correct');
 ok ($result->[3] eq 'god', 'Fourth word correct');
 
 ok (scalar @{$result} == 4, 'Result vector is the right length');
+
+($error, $result) = WordFinder::find_words('a' x 33);
+ok ($error eq 'Input String Too Long', 'Validation works');

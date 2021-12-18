@@ -2,7 +2,8 @@ use lib 'lib/';
 use Dancer2;
 use WordFinder;
 
-set port => 80;
+my $port = $ENV{'IS_DOCKER'} ? 80 : 8000;
+set port => $port;
 
 get '/ping' => sub {
   content_type 'text/plain';
