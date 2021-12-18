@@ -20,4 +20,8 @@ get '/wordfinder/:input' => sub {
   send_as JSON => $result;
 };
 
+get '/easter' => sub {
+  redirect 'https://dullesmoms.com/wp-content/uploads/2018/02/Easter-Evergreen-9.jpg';
+};
+
 start;
