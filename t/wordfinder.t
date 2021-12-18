@@ -16,4 +16,4 @@ ok ($result->[1] eq 'dog', 'Second word correct');
 ok ($result->[2] eq 'go', 'Third word correct');
 ok ($result->[3] eq 'god', 'Fourth word correct');
 
-ok(scalar @{$result} == 4, 'Result vector is the right length');
+ok (scalar @{$result} == 4, 'Result vector is the right length');
