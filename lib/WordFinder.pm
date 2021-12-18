@@ -4,7 +4,7 @@ sub find_words {
   my $input = shift;
   return ('Invalid Input', undef) if $input =~ /[\W\s]/;
 
-  my $dictionary = {};
+  my @dictionary;
   open my $fh, '<', $ENV{'DICTIONARY_FILE'};
   while (<$fh>) {
     chomp;
@@ -22,12 +22,11 @@ sub find_words {
       s/$char//;
     }
     next if length;
-
-    $dictionary->{$word} = undef;
+    push @dictionary, $word;
   }
 
-  my @word_list = sort keys $dictionary->%*;
-  return (undef, \@word_list);
+  my @dictionary = sort @dictionary;
+  return (undef, \@dictionary);
 }
 
 1;
