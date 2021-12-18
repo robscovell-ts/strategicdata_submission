@@ -2,7 +2,8 @@ use Dancer2;
 use WordFinder;
 
 get '/ping' => sub {
-  return 'OK';
+  content_type 'text/plain';
+  "OK";
 };
 
 get '/wordfinder/:input' => sub {
