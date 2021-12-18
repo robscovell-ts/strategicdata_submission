@@ -2,7 +2,7 @@ use lib 'lib/';
 use Dancer2;
 use WordFinder;
 
-set port => 80;
+set port => 8000;
 
 get '/ping' => sub {
   content_type 'text/plain';

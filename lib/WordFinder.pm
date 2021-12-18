@@ -25,7 +25,7 @@ sub find_words {
     push @dictionary, $word;
   }
 
-  my @dictionary = sort @dictionary;
+  @dictionary = sort @dictionary;
   return (undef, \@dictionary);
 }
 
