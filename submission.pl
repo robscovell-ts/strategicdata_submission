@@ -1,3 +1,4 @@
+use lib 'lib/';
 use Dancer2;
 use WordFinder;
 

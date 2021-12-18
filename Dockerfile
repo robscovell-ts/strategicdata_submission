@@ -8,4 +8,4 @@ WORKDIR .
 RUN cpanm --installdeps .
 RUN prove -l
 
-CMD [ "perl", "-I", "./submission.pl" ]
+CMD [ "perl", "./submission.pl" ]
