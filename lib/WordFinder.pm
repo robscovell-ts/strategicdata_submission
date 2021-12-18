@@ -24,6 +24,7 @@ sub find_words {
     next if length;
     push @dictionary, $word;
   }
+  close $fh;
 
   @dictionary = sort @dictionary;
   return (undef, \@dictionary);
