@@ -1,7 +1,5 @@
 package WordFinder;
 
-use Data::Dumper;
-
 sub find_words {
   my $input = shift;
   return ('Invalid Input', undef) if $input =~ /[\W\s]/;

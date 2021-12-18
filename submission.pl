@@ -11,8 +11,7 @@ get '/wordfinder/:input' => sub {
 
   my $input = route_parameters->get('input');
   my ($error, $result) = WordFinder::find_words($input);
-  if ($error) {
-  }
+  return { 'error' => $error } if $error;
   return $result;
 };
 
