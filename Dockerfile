@@ -10,4 +10,4 @@ RUN [ "cpan", "JSON"]
 RUN [ "cpan", "Dancer2"]
 RUN [ "prove", "-l" ]
 
-CMD [ "perl", "./submission.pl" ]
+CMD [ "perl", "-I", "./submission.pl" ]
